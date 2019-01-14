@@ -1,0 +1,24 @@
+bode{
+    padding: 20px;
+}
+h1{
+    text-align: center;
+    margin: 50px 0px;
+    font-size: 60px;
+    color: darkblue;
+    text-decoration: underline;
+}
+.img{
+    width: 70%;
+    height: 400px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p{
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    color: dimgray;
+}

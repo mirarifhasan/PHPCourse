@@ -1,0 +1,41 @@
+body{
+    background-color: #F2F2F2;
+    font-family: sans-serif;
+}
+h1{
+    font-weight: normal;
+}
+
+.header{
+    text-align: center;
+    margin-top: 50px;
+    color: #272727;
+    font-size: 28px
+}
+
+.content{
+    margin: 10px auto 0;
+    display: table;
+}
+
+.row{
+    width: 0%;
+    margin-bottom: 20px;
+}
+
+.column{
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    border: 15px solid #F2F2F2;
+}
+h{
+    line-height: 200%;
+}
+p{
+    line-height: 0%;
+    margin-bottom: 20px;
+    color: #949fbb;
+}
+
