@@ -2,12 +2,14 @@
     box-sizing: border-box;
 }
 
-.header p{
+.header{
     background-color: black;
+}
+
+.header p{
     color: #C9BCB6;
     font-size: 32px;
     padding: 15px;
-    padding-left: 100px;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -103,7 +105,7 @@
 
 .aust-top p{
     padding-top: 150px;
-    font-size: 50px;
+    font-size: 45px;
     color: white;
     font-weight: 100;
     margin-bottom: -10px;
@@ -114,14 +116,14 @@
 }
 
 .aust-bottom p{
-    font-size: 60px;
+    font-size: 50px;
     color: white;
     font-weight: 650;
     margin-right: 15px;
 }
 
 .aust-bottom a{
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 10px 30px;
     color: white;
     background-color: #8EC63F;
