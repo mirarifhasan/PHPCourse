@@ -99,12 +99,14 @@
     background-image: url(../image/ddg-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 500px;
     width: auto;
 }
 
+.aust-cse-cover{
+    padding: 100px 0px;
+}
+
 .aust-top p{
-    padding-top: 150px;
     font-size: 45px;
     color: white;
     font-weight: 100;
@@ -204,9 +206,10 @@
         color: #82888B;
         margin-bottom: 40px;
     }
-
+    .aust-cse-cover{
+        padding: 50px 0px;
+    }
     .aust-top p{
-        padding-top: 150px;
         font-size: 25px;
         color: white;
         font-weight: 100;
@@ -262,8 +265,11 @@
         width: auto;
     }
 
+    .aust-cse-cover{
+        padding: 70px 0px;
+    }
+    
     .aust-top p{
-        padding-top: 50px;
         font-size: 30px;
         color: white;
         font-weight: 100;
