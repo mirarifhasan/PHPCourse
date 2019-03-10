@@ -3,4 +3,4 @@
 
 3. Create a folder in this address: C:drive -> xampp -> htdocs
 4. paste here the php file.
-5. Open the php file in browser.
+5. Open Browser and put "localhost/folder_name" on addressbar
