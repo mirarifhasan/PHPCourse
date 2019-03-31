@@ -3,12 +3,13 @@
 $error = '';
 $name = '';
 $email = '';
-$phone = '';
-$message = '';
+$password = '';
 
 function clean_text($string)
 {
  $string = trim($string);
+ $string = stripslashes($string);
+ $string = htmlspecialchars($string);
  return $string;
 }
 
@@ -38,45 +39,35 @@ if(isset($_POST["submit"]))
    $error .= '<p><label class="text-danger">Invalid email format</label></p>';
   }
  }
- if(empty($_POST["phone"]))
+ if(empty($_POST["password"]))
  {
-  $error .= '<p><label class="text-danger">Phone is required</label></p>';
+  $error .= '<p><label class="text-danger">Password is required</label></p>';
  }
  else
  {
-  $subject = clean_text($_POST["phone"]);
+  $password = clean_text($_POST["password"]);
  }
- if(empty($_POST["message"]))
- {
-  $error .= '<p><label class="text-danger">Message is required</label></p>';
- }
- else
- {
-  $message = clean_text($_POST["message"]);
- }
+ 
 
  if($error == '')
  {
   $file_open = fopen("contact_data.csv", "a");
   $no_rows = count(file("contact_data.csv"));
-  if($no_rows > 1)
-  {
-   $no_rows = ($no_rows) + 1;
-  }
+
+  $no_rows = ($no_rows) + 1;
+  
   $form_data = array(
    'sr_no'  => $no_rows,
    'name'  => $name,
    'email'  => $email,
-   'phone' => $phone,
-   'message' => $message
+   'password' => $password
   );
   fputcsv($file_open, $form_data);
   $error = '<label class="text-success">Thank you for contacting us</label>';
   $name = '';
   $email = '';
-  $subject = '';
-  $message = '';
-  header('Location: page2.php');
+  $password = '';
+  header('Location: view.php');
  }
 }
 
@@ -96,7 +87,7 @@ if(isset($_POST["submit"]))
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/indexCSS.css">
     
 </head>
 
@@ -111,25 +102,18 @@ if(isset($_POST["submit"]))
                 <?php echo $error; ?>
                 
                 <div class="form-group">
-                    <label>Enter Name</label>
+                    <label>Name</label>
                     <input type="text" name="name" placeholder="Enter Name" class="form-control" value="<?php echo $name; ?>" /> 
                 </div>
                 
                 <div class="form-group">
-                    <label>Enter Email</label>
+                    <label>Email</label>
                     <input type="text" name="email" class="form-control" placeholder="Enter Email" value="<?php echo $email; ?>" />
                 </div>
                 
                 <div class="form-group">
-                    <label>Enter Phone</label>
-                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone" value="<?php echo $phone; ?>" />
-                </div>
-                
-                <div class="form-group">
-                    <label>Enter Message</label>
-                    <textarea name="message" class="form-control" placeholder="Enter Message">
-                        <?php echo $message; ?>
-                    </textarea>
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter Password" value="<?php echo $password; ?>" />
                 </div>
                 
                 <div class="form-group" align="center">
